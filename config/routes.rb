@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :blogs
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  namespace :admin do
+    get 'dashboard/blog'
+    get 'dashboard/main'
+    get 'dashboard/user'
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get 'about', to: 'pages#about'
+  get 'leadgen/advertising/landingpage/lead', to: 'pages#contact', as: 'lead'
+  resources :blogs
+
+  root to: 'pages#home'
 end
