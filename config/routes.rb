@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'leadgen/advertising/landingpage/lead', to: 'pages#contact', as: 'lead'
   resources :blogs
+  resources :posts
+  get 'posts/*missing', to: 'posts#missing'
+
 
   root to: 'pages#home'
 end
