@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :posts
   get 'posts/*missing', to: 'posts#missing'
 
+  get 'query/:else/:another_one', to: 'pages#something'
 
   root to: 'pages#home'
 end
